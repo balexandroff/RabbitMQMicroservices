@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using RabbitMQMicroservices.Banking.Application.Interfaces;
 using RabbitMQMicroservices.Banking.Application.Models;
 using RabbitMQMicroservices.Banking.Domain.Models;
+using System.Collections.Generic;
 
 namespace RabbitMQMicroservices.Api.Controllers
 {

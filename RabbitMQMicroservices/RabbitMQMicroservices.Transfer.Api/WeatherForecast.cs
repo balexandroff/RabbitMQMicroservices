@@ -1,6 +1,6 @@
 using System;
 
-namespace RabbitMQMicroservices.Api
+namespace RabbitMQMicroservices.Transfer.Api
 {
     public class WeatherForecast
     {
