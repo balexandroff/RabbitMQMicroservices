@@ -4,6 +4,7 @@ using RabbitMQMicroservices.Banking.Application.Interfaces;
 using RabbitMQMicroservices.Banking.Application.Services;
 using RabbitMQMicroservices.Banking.Data.Context;
 using RabbitMQMicroservices.Banking.Data.Repository;
+using RabbitMQMicroservices.Banking.Domain.Commands;
 using RabbitMQMicroservices.Banking.Domain.Interfaces;
 using RabbitMQMicroservices.Domain.Core.Bus;
 using RabbitMQMicroservices.Infrastructure.Bus;
@@ -18,6 +19,9 @@ namespace RabbitMQMicroservices.Infrastructure.Dependency
 
             //Domain Bus
             services.AddTransient<IEventBus, RabbitMQBus>();
+
+            //Domain Banking Commands
+            services.AddTransient<IRequestHandler<CreateTransferCommand, bool>, TransferCommandHandler>();
 
             //Aplication Services
             services.AddTransient<IAccountService, AccountService>();

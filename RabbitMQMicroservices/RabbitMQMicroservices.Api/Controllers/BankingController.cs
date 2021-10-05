@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using RabbitMQMicroservices.Banking.Application.Interfaces;
+using RabbitMQMicroservices.Banking.Application.Models;
 using RabbitMQMicroservices.Banking.Domain.Models;
 
 namespace RabbitMQMicroservices.Api.Controllers
@@ -27,6 +28,13 @@ namespace RabbitMQMicroservices.Api.Controllers
         public ActionResult<IEnumerable<Account>> Get()
         {
             return Ok(_accountService.GetAccounts());
+        }
+
+        [HttpPost]
+        public IActionResult Post([FromBody] AccountTransfer accountTransfer)
+        {
+            _accountService.Transfer(accountTransfer);
+            return Ok(accountTransfer);
         }
     }
 }
